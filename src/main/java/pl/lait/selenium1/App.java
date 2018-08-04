@@ -23,7 +23,7 @@ public class App{
 	        driver.findElement(By.linkText("SIGN-ON")).click();; // po czym szukamy elementu po link texcie  tutaj  i KLIK !(By. link text)       //////{{{ inne:xpath - radio butonny, linktext -  a hrefy, id - w html
 	        sleep(3);
 	        driver.findElement(By.name("userName")).sendKeys("sirtepek1");   // znalezc element i wysylam "string" ktory mam wpisac w polu.
-	        driver.findElement(By.name("password")).sendKeys("sirtepek");
+	        driver.findElement(By.name("password")).sendKeys("sirtepek"); //
 	        sleep(3);
 	        driver.findElement(By.name("login")).submit();   // submit albo click tez działa
 	        sleep(4);
