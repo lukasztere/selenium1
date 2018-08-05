@@ -45,36 +45,31 @@ public class LoginTest {
 	} // end metoda clickOnMenuItems
 	 
 	// rezerwacja lotów stronka, testujemy
+	@Ignore
 	@Test 
 	public void reservation( ) {
 		  driver.findElement(By.linkText("SIGN-ON")).click();; // po czym szukamy elementu po link texcie  tutaj  i KLIK !(By. link text)       //////{{{ inne:xpath - radio butonny, linktext -  a hrefy, id - w html
 	      driver.findElement(By.name("userName")).sendKeys("sirtepek1");   // znalezc element i wysylam "string" ktory mam wpisac w polu.
 	      driver.findElement(By.name("password")).sendKeys("sirtepek"); //
-	      driver.findElement(By.name("login")).submit();   // submit albo click tez działa
-	      driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td[2]/table/"
-				+ "tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table"
-				+ "/tbody/tr[2]/td[2]/b/font/input[2]")).click();  // radio buttony - xpathami dajemy
-		
-		Select passCount = new Select(driver.findElement(By.name("passCount")));
-		passCount.selectByValue("4");
-		Select fromPort = new Select(driver.findElement(By.name("fromPort"))); //f12 chrome zaznaczamy acapulco name"fromPort"
-		fromPort.selectByValue("Frankfurt");
-		Select airline = new Select(driver.findElement(By.name("airline")));
-		airline.selectByVisibleText("Pangea Airlines");
-		driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/"
-				+ "td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td/input")).click(); //continue radio button
-		
-		
-		
-	} // end void metoda reservation
-	
-	
-	
+	      driver.findElement(By.name("login")).click();   // submit albo click tez działa
+	    
+	  	     
+	      driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td[2]/table/tbody/"  
+	      		+ "tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr["
+	      		+ "2]/td[2]/b/font/input[2]")).click();//  radio buttony - xpathami dajemy
+	      
+	      Select passCount = new Select(driver.findElement(By.name("passCount")));
+			passCount.selectByValue("4");
+
+			Select fromPort = new Select(driver.findElement(By.name("fromPort"))); //f12 chrome zaznaczamy acapulco name"fromPort"
+			fromPort.selectByValue("Frankfurt");
+	    
+	      
+		} // end void metoda reservation
 	
 	@After
 	public void tearDown ( ) {          // wygaszanie
-	Init.sleep(2);
+		Init.sleep(2);
+		Init.endTest();
 	} // end void tearDown - wygaszanie
-	
-	
 } // end class LoginTest
