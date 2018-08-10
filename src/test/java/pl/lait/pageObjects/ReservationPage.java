@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import pl.lait.selenium1.Init;
 
-public class ReservationPage {
+public class ReservationPage {  
 
 	WebDriver driver;
 	
