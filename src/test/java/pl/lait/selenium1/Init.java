@@ -26,7 +26,7 @@ public class Init {
 			e.printStackTrace();
 		}
 		
-		DesiredCapabilities cap = DesiredCapabilities.chrome();  // dowolny Firefox
+		DesiredCapabilities cap = DesiredCapabilities.firefox();  // dowolny Firefox
         if (driver == null) {
         	   driver = new RemoteWebDriver(url, cap); // stwórz nowego Firefoxa za pomocą metody FirefoxDriver
                driver.get("http://newtours.demoaut.com");  // przejdz na tę stronę
