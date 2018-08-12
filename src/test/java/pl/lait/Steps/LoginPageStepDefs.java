@@ -28,8 +28,12 @@ public class LoginPageStepDefs {
 
 	@Then("^I should see login page$")
 	public void i_should_see_login_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	   
+	}
 	
+	
+	@After
+	public void teardown() {
+		Init.endTest();
 	}
 } // end class LoginPage
