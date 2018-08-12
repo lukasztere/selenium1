@@ -26,12 +26,12 @@ public class Init {
 			e.printStackTrace();
 		}
 		
-		DesiredCapabilities cap = DesiredCapabilities.firefox();  // dowolny Firefox
+		DesiredCapabilities cap = DesiredCapabilities.chrome();  // dowolny Firefox
         if (driver == null) {
         	   driver = new RemoteWebDriver(url, cap); // stwórz nowego Firefoxa za pomocą metody FirefoxDriver
                driver.get("http://newtours.demoaut.com");  // przejdz na tę stronę
                driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS); // 30 sekund  konfigurujemy driver.manage czas czekania 30 s
-               driver.manage().window().maximize();
+              // driver.manage().window().maximize();
                return driver;
         } else {
         	return driver;
