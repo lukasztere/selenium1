@@ -1,11 +1,14 @@
 package pl.lait.selenium1;
 
 import java.awt.Window;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.google.common.graph.ElementOrder.Type;
 
@@ -15,9 +18,17 @@ public class Init {
 	
 	public static WebDriver getDriver() {  // // getDriver  - metoda z małej litery
 		System.setProperty("webdriver.gecko.driver", "E:\\geckodriver\\geckodriver.exe"); //gdzie jest Firefox? tutaj !
-        DesiredCapabilities cap = DesiredCapabilities.firefox();  // dowolny Firefox
+		URL url = null;
+		try {
+			url = new URL("http://192.168.0.111:4444/wd/hub");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		DesiredCapabilities cap = DesiredCapabilities.chrome();  // dowolny Firefox
         if (driver == null) {
-        	   driver = new FirefoxDriver(cap); // stwórz nowego Firefoxa za pomocą metody FirefoxDriver
+        	   driver = new RemoteWebDriver(url, cap); // stwórz nowego Firefoxa za pomocą metody FirefoxDriver
                driver.get("http://newtours.demoaut.com");  // przejdz na tę stronę
                driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS); // 30 sekund  konfigurujemy driver.manage czas czekania 30 s
                driver.manage().window().maximize();

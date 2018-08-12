@@ -2,7 +2,6 @@ package pl.lait.selenium1;
 
 
 
-import org.junit.Before;
 import org.junit.runners.MethodSorters;
 import org.junit.*;                     // wszystkie junity wybieramy za pomocą gwiazdki *
 import org.openqa.selenium.By;
@@ -10,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.junit.runners.*;
 import org.openqa.selenium.support.ui.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@Ignore
 public class LoginTest {
 	
 	WebDriver driver = null;             // najedz myszka na webdrivera i import.   pusta klasa dla WebDrivera.

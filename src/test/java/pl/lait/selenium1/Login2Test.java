@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import pl.lait.pageObjects.LoginPage;
 import pl.lait.pageObjects.Reservation2Page;
 import pl.lait.pageObjects.ReservationPage;
-
+@Ignore
 public class Login2Test {
 
 	WebDriver driver = null;
